@@ -1,0 +1,26 @@
+*
+####################
+# ProgrammingTest1 #
+####################
+
+!ProgrammingTest1.sln
+
+!.gitignore
+!README.md
+!demo.bat
+!screenshots/
+!screenshots/*
+
+!Data/
+!Data/*
+!Data/Context/**
+!Data/Interfaces/**
+!Data/Model/**
+
+!Backend/
+!Backend/*
+!Backend/Controllers/**
+!Backend/Properties/**
+
+# Ignore
+frontend/node_modules
