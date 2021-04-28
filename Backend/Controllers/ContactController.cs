@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Data.Interfaces;
 using Data.Model;
@@ -36,6 +38,28 @@ namespace Backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Contact contact)
         {
+            var EmailRegex = new Regex(@"^\w[0-9A-Za-z]@\w[0-9A-Za-z]+\.\w[0-9A-Za-z].*");
+
+            if (String.IsNullOrEmpty(contact.Name) || String.IsNullOrEmpty(contact.LastName)) 
+            {
+                return BadRequest(new
+                {
+                    Message = "El nombre y apellido del contacto son requeridos"
+                });
+            }
+
+            try
+            {
+                new MailAddress(contact.Email);
+            }
+            catch (Exception)
+            {
+                return BadRequest(new
+                {
+                    Message = "El email no está en un formato correcto"
+                });
+            }
+
             try
             {
                 await db.Contacts.Add(contact);

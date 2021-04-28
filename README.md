@@ -53,3 +53,8 @@ Then cd to the output folder (in this case the Desktop/Backend) and run the Back
 
 ![Screenshot](screenshots/DELETE1.png)
 ![Screenshot](screenshots/DELETE2.png)
+
+### Validations
+
+![Screenshot](screenshots/VALIDATION1.png)
+![Screenshot](screenshots/VALIDATION2.png)
